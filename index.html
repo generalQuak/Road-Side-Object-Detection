@@ -177,8 +177,8 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
       <li><a href="#intro">Intro</a></li>
       <li><a href="#datasets">Datasets</a></li>
       <li><a href="#results">Results</a></li>
-      <li><a href="#newrun">New Run</a></li>
-      <li><a href="#survey">Survey</a></li>
+      <li><a href="#newrun">Improved Run</a></li>
+      <li><a href="#survey">Conclusion</a></li>
       <li><a href="#team">Team</a></li>
     </ul>
   </nav>
@@ -246,12 +246,12 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
       <!-- HUD -->
       <rect x="18" y="18" width="185" height="62" fill="black" opacity=".55" rx="5"/>
       <text x="30" y="40" fill="#00ff88" font-size="11" font-family="monospace">● REC  00:04:32</text>
-      <text x="30" y="57" fill="white" font-size="10" font-family="monospace">CAM: FRONT  60fps</text>
-      <text x="30" y="72" fill="#FFCC00" font-size="10" font-family="monospace">SVM: 91.43% ★</text>
+      <text x="30" y="57" fill="white" font-size="10" font-family="monospace">CAM: FRONT  30fps</text>
+      <text x="30" y="72" fill="#FFCC00" font-size="10" font-family="monospace">EECS 351 CAM</text>
       <rect x="1235" y="18" width="185" height="62" fill="black" opacity=".55" rx="5"/>
       <text x="1248" y="40" fill="white" font-size="10" font-family="monospace">SPEED: 42 mph</text>
       <text x="1248" y="57" fill="white" font-size="10" font-family="monospace">GPS: 34.0195°N</text>
-      <text x="1248" y="72" fill="#aac" font-size="10" font-family="monospace">CLASSES: 6</text>
+      <text x="1248" y="72" fill="#aac" font-size="10" font-family="monospace">NORTH </text>
     </svg>
     <div class="hero-ov"></div>
   </div>
@@ -279,7 +279,7 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
   <div class="row rev">
     <div class="col-text reveal">
       <div class="stag">01 — Introduction</div>
-      <h2 class="sh">What We Set<br>Out To Do</h2>
+      <h2 class="sh">PIPELINE</h2>
       <div class="sbar"></div>
       <p class="sb">This report describes the results of running four MATLAB classifiers on labeled dashcam image datasets, evaluating differences in computation speed and accuracy: <strong>K Nearest Neighbors (KNN)</strong>, <strong>Naive Bayes</strong>, <strong>Support Vector Machine (SVM)</strong>, and <strong>Decision Tree</strong>.</p>
       <p class="sb">All images were resized to a common resolution and converted into fixed-length grayscale pixel feature vectors. Datasets were balanced at 50 images per class for initial experiments.</p>
@@ -342,7 +342,11 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
       <div class="stag">02 — Datasets</div>
       <h2 class="sh">What We<br>Classified</h2>
       <div class="sbar y"></div>
-      <p class="sb">We used labeled datasets from Kaggle and dashcam-related sources. Initial experiments balanced all classes at <strong>50 images each</strong>. Later runs used unbalanced real-world proportions (e.g. 414 cars, 234 pedestrians, 3029 signs) to better reflect deployment conditions.</p>
+      <p class="sb">Initially, we struggled finidng good datasets with cropped dash-cam images of the classes we desired. 
+        So we used some suboptimal datasets while we procured and produced our own dataset. <br> 
+        We used labeled datasets from Kaggle and dashcam-related sources. 
+        Initial experiments balanced all classes at <strong>50 images each</strong>. 
+        Later runs used unbalanced real-world proportions (e.g. 414 cars, 234 pedestrians, 3029 signs) to better reflect deployment conditions.</p>
       <p class="sb">All images were in JPG format for their smaller file size and prevalence in real dashcam footage.</p>
       <ul class="survey-list" style="margin-top:1.5rem">
         <li><strong>Bicycle</strong> — Kaggle balanced subset</li>
@@ -395,7 +399,9 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
     <div class="stag c">03 — Results</div>
     <h2 class="sh c">Balanced Dataset<br>Results</h2>
     <div class="sbar c"></div>
-    <p class="sb c">Actual MATLAB output charts from the 2-class and 3-class balanced runs (50 images per class). Accuracy decreases as more classes are added.</p>
+    <p class="sb c">Actual MATLAB output charts from the 2-class and 3-class balanced runs (50 images per class). 
+      Accuracy decreases as more classes are added. 
+      Must disclaim that we initally used suboptimal datasets which included images that weren't fully cropped nor sourced from dashcam footage.</p>
   </div>
 
   <!-- Row: 2-class -->
@@ -451,8 +457,8 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
   <div class="finding reveal">
     <div class="finding-icon">📊</div>
     <div>
-      <div class="finding-title">Key Finding — Balanced Runs</div>
-      <p>Accuracy consistently drops as more classes are added. In the 2-class run KNN and Decision Tree both peaked at 65%, while in the 3-class run Naive Bayes was the surprise winner at 50% — suggesting raw pixel features interact differently per algorithm at small scales.</p>
+      <div class="finding-title">Key Finding — Balanced Runs, Unrefined Dataset </div>
+      <p> Accuracy consistently drops as more classes are added. In the 2-class run KNN and Decision Tree both peaked at 65%, while in the 3-class run Naive Bayes was the surprise winner at 50% — suggesting raw pixel features interact differently per algorithm at small scales.</p>
     </div>
   </div>
 </section>
@@ -460,10 +466,10 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
 <!-- NEW EXPANDED RUN -->
 <section class="sec sec-dark" id="newrun">
   <div class="cblock">
-    <div class="stag c">04 — Expanded Run</div>
+    <div class="stag c">04 — Expanded Run with Refined Dataset</div>
     <h2 class="sh c">Real-World Dataset<br>Results</h2>
     <div class="sbar c y"></div>
-    <p class="sb c">A new run with unbalanced, real-world class proportions: <strong>3 classes (car, pedestrian, sign)</strong> — Car: 414, Pedestrian: 234, Sign: 3,029. Training set: 2,942 · Test set: 735.</p>
+    <p class="sb c">A new run with refined, unbalanced, real-world class proportions: <strong>3 classes (car, pedestrian, sign)</strong> with over 700 screenshots taken by us from real dashcam footage. <br>— Car: 414, Pedestrian: 234, Sign: 3,029. Training set: 2,942 · Test set: 735.</p>
   </div>
 
   <div class="row" style="max-width:1100px;margin:0 auto">
@@ -477,7 +483,9 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
       <div class="stag">Updated Accuracy</div>
       <h3 style="font-family:var(--ftitle);font-size:2rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:.75rem">Car · Pedestrian · Sign</h3>
       <div class="sbar"></div>
-      <p class="sb">With a larger, unbalanced dataset the classifiers perform dramatically better — especially SVM, which achieves over <strong>91%</strong> accuracy.</p>
+      <p class="sb">With a larger, refined, and unbalanced dataset that accurately reflects realworld data. Most classifiers perform dramatically better — especially SVM, which achieves over <strong>91%</strong> accuracy. 
+        <strong>However,</strong> Naive Bayes performed significantly worse than any other classifier which revealed a fundamental flaw. That the Naive Bayes classifier will assign a prior probability based on 
+        how often a class appears in training sets.</p>
       <div class="acc-row">
         <div class="acc-card"><div class="acc-pct">89.1%</div><div class="acc-model">KNN</div></div>
         <div class="acc-card"><div class="acc-pct">51.4%</div><div class="acc-model">Naive Bayes</div></div>
@@ -493,7 +501,7 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
   <div class="finding reveal" style="background:rgba(255,204,0,.05);border-color:rgba(255,204,0,.2)">
     <div class="finding-icon">🏆</div>
     <div>
-      <div class="finding-title" style="color:var(--gold)">Key Finding — Expanded Run</div>
+      <div class="finding-title" style="color:var(--gold)">Key Finding — Expanded Run, Refined Dataset </div>
       <p>SVM is the clear winner at <strong>91.43%</strong>, consistent with literature suggesting SVM handles high-dimensional pixel features well. The jump from 55% → 91% from balanced-50 to the real dataset underscores how data volume dramatically impacts baseline classifiers. Naive Bayes remains the weakest, sensitive to class imbalance.</p>
     </div>
   </div>
@@ -504,7 +512,7 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
   <div class="row rev">
     <div class="col-text reveal">
       <div class="stag">05 — Survey Paper</div>
-      <h2 class="sh">What the<br>Literature Says</h2>
+      <h2 class="sh">Turay and Vladimirova's Paper on <br> Image Classification</h2>
       <div class="sbar"></div>
       <p class="sb"><em>Turay, T. &amp; Vladimirova, T. "Toward performing image classification and object detection with CNNs in autonomous driving systems: A survey." IEEE Access, vol. 10, pp. 14076–14119, 2022.</em></p>
       <ul class="survey-list">
@@ -586,7 +594,7 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
     <div class="team-card"><div class="avatar">JP</div><div class="mname">Joshua Peterson</div></div>
     <div class="team-card"><div class="avatar">PF</div><div class="mname">Pok Wai Fong</div></div>
     <div class="team-card"><div class="avatar">HT</div><div class="mname">Hoa Tran</div></div>
-    <div class="team-card"><div class="avatar">BY</div><div class="mname">Boyu</div></div>
+    <div class="team-card"><div class="avatar">BY</div><div class="mname">Boyu Jin</div></div>
   </div>
 </section>
 
