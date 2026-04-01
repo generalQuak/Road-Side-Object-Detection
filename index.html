@@ -352,16 +352,8 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
       <p class="sb">We created part of our own dataset by cropping objects from authentic dashcam footage, improving perspective, lighting, motion blur, and framing consistency. 
         However, this custom set has limitations: many clips were sourced from Russia and fewer from the United States, Canada, and China. 
         Pedestrian data may underrepresent demographic, clothing, and environment diversity in North America, which could produce uneven model performance across groups and regions. <strong>pedestrian46.jpg</strong> exemplifies this limitation. 
-        Expanding to broader demographic and geographic data is an important next step.</p>      <div class="image-callout" style="display:flex;gap:1rem;flex-wrap:wrap;margin:1rem 0;align-items:flex-start">
-        <figure style="flex:1 1 220px; max-width:240px; background:var(--card); border:1px solid var(--border); border-radius:10px; padding:.6rem;">
-          <img src="images/BadCar(43).jpg" alt="BadCar(43)" style="width:100%;height:auto;border-radius:8px; display:block;">
-          <figcaption style="margin-top:.45rem;font-size:.82rem;color:var(--muted);text-align:center;">BadCar(43).jpg</figcaption>
-        </figure>
-        <figure style="flex:1 1 220px; max-width:240px; background:var(--card); border:1px solid var(--border); border-radius:10px; padding:.6rem;">
-          <img src="images/pedestrian46.jpg" alt="pedestrian46" style="width:100%;height:auto;border-radius:8px; display:block;">
-          <figcaption style="margin-top:.45rem;font-size:.82rem;color:var(--muted);text-align:center;">pedestrian46.jpg</figcaption>
-        </figure>
-      </div>      <p class="sb">All images were in JPG format for their smaller file size and prevalence in real dashcam footage.</p>
+        Expanding to broader demographic and geographic data is an important next step.</p>
+      <p class="sb">All images were in JPG format for their smaller file size and prevalence in real dashcam footage.</p>
       <ul class="survey-list" style="margin-top:1.5rem">
         <li><strong>Bicycle</strong> — Kaggle balanced subset</li>
         <li><strong>Motorcycle</strong> — Kaggle balanced subset</li>
@@ -403,6 +395,16 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
         <text x="34" y="284" fill="#FFCC00" font-size="10" font-family="monospace">⚠  *Unbalanced counts from the newer expanded run</text>
         <text x="34" y="302" fill="#aa9955" font-size="10" font-family="monospace">   (car:414, pedestrian:234, sign:3029) — Train:2942, Test:735</text>
       </svg>
+      <div class="image-callout" style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem;align-items:flex-start;justify-content:flex-end;">
+        <figure style="flex:0 0 220px; max-width:220px; background:var(--card); border:1px solid var(--border); border-radius:10px; padding:.6rem;">
+          <img src="images/BadCar(43).jpg" alt="BadCar(43)" style="width:100%;height:auto;border-radius:8px; display:block;">
+          <figcaption style="margin-top:.45rem;font-size:.82rem;color:var(--muted);text-align:center;">BadCar(43).jpg</figcaption>
+        </figure>
+        <figure style="flex:0 0 220px; max-width:220px; background:var(--card); border:1px solid var(--border); border-radius:10px; padding:.6rem;">
+          <img src="images/pedestrian46.jpg" alt="pedestrian46" style="width:100%;height:auto;border-radius:8px; display:block;">
+          <figcaption style="margin-top:.45rem;font-size:.82rem;color:var(--muted);text-align:center;">pedestrian46.jpg</figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 </section>
