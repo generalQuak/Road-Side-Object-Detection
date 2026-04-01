@@ -120,6 +120,16 @@ nav a:hover{opacity:1;color:var(--gold)}
 .survey-list li{font-size:.93rem;color:var(--muted);padding-left:1.25rem;position:relative}
 .survey-list li::before{content:"—";position:absolute;left:0;color:var(--cardinal)}
 .future-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem}
+
+/* Lightbox */
+.lightbox-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:1000;cursor:pointer;}
+.lightbox-overlay.show{display:flex;}
+.lightbox-inner{position:relative;max-width:95vw;max-height:95vh;cursor:default;}
+.lightbox-close{position:absolute;top:-12px;right:-12px;width:28px;height:28px;border-radius:999px;border:none;background:var(--gold);color:var(--dark);font-size:18px;font-weight:800;cursor:pointer;z-index:2;}
+.lightbox-content{max-width:95vw;max-height:95vh;display:flex;align-items:center;justify-content:center;overflow:auto;}
+.lightbox-content img,.lightbox-content svg{max-width:90vw;max-height:90vh;}
+.lightbox-content svg{width:auto;height:auto;}
+
 .future-title{font-family:var(--ftitle);font-size:1rem;letter-spacing:2px;color:var(--gold);margin-bottom:1rem}
 .future-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
 .future-list li{font-size:.9rem;color:var(--muted)}
@@ -637,6 +647,13 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
   <div class="footer-r">© 2026 All Rights Reserved.</div>
 </footer>
 
+<div id="lightboxOverlay" class="lightbox-overlay" aria-hidden="true">
+  <div class="lightbox-inner" role="dialog" aria-modal="true">
+    <button id="lightboxClose" class="lightbox-close" aria-label="Close">×</button>
+    <div id="lightboxContent" class="lightbox-content"></div>
+  </div>
+</div>
+
 <script>
 // Nav scroll effect
 const hdr = document.getElementById('hdr');
@@ -666,6 +683,54 @@ window.addEventListener('scroll', () => {
   sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
   navLinks.forEach(l => { l.style.color = l.getAttribute('href') === `#${cur}` ? 'var(--gold)' : ''; });
 });
+
+// Lightbox for images and inline SVGs
+const lightbox = document.getElementById('lightboxOverlay');
+const lightboxContent = document.getElementById('lightboxContent');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(contentNode) {
+  lightboxContent.innerHTML = '';
+  lightboxContent.appendChild(contentNode);
+  lightbox.classList.add('show');
+  lightbox.setAttribute('aria-hidden', 'false');
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('show');
+  lightbox.setAttribute('aria-hidden', 'true');
+  lightboxContent.innerHTML = '';
+}
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+function setupZoomable(selector, callback) {
+  document.querySelectorAll(selector).forEach(el => {
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (selector === 'img') {
+        const copy = document.createElement('img');
+        copy.src = el.src;
+        copy.alt = el.alt || '';
+        openLightbox(copy);
+        return;
+      }
+      if (selector === 'svg') {
+        const clone = el.cloneNode(true);
+        clone.style.width = 'auto';
+        clone.style.height = 'auto';
+        openLightbox(clone);
+      }
+    });
+  });
+}
+
+setupZoomable('img');
+setupZoomable('svg');
 </script>
 </body>
 </html>
