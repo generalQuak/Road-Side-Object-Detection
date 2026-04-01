@@ -347,6 +347,12 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
         We used labeled datasets from Kaggle and dashcam-related sources. 
         Initial experiments balanced all classes at <strong>50 images each</strong>. 
         Later runs used unbalanced real-world proportions (e.g. 414 cars, 234 pedestrians, 3029 signs) to better reflect deployment conditions.</p>
+      <p class="sb">To improve realism, we moved away from an older car dataset after finding many images that were not representative of dashcam footage. 
+        It contained luxury vehicles (e.g., Rolls-Royces), heavily edited promotional images, text overlays, and staged settings. Using such images risks teaching the model non-generalizable patterns that would hurt roadside detection in practice. <strong>Bad Car(43).jpg</strong> is an example of an image that triggered this refinement.</p>
+      <p class="sb">We created part of our own dataset by cropping objects from authentic dashcam footage, improving perspective, lighting, motion blur, and framing consistency. 
+        However, this custom set has limitations: many clips were sourced from Russia and fewer from the United States and Canada. 
+        Pedestrian data may underrepresent demographic, clothing, and environment diversity in North America, which could produce uneven model performance across groups and regions. <strong>pedestrian46.jpg</strong> exemplifies this limitation. 
+        Expanding to broader demographic and geographic data is an important next step.</p>
       <p class="sb">All images were in JPG format for their smaller file size and prevalence in real dashcam footage.</p>
       <ul class="survey-list" style="margin-top:1.5rem">
         <li><strong>Bicycle</strong> — Kaggle balanced subset</li>
