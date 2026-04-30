@@ -116,6 +116,18 @@ nav a:hover{opacity:1;color:var(--gold)}
 .img-card img{width:100%;display:block}
 .img-caption{padding:.75rem 1rem;font-size:.78rem;color:var(--muted);
   font-style:italic;letter-spacing:.5px;border-top:1px solid var(--border)}
+.figure-grid{max-width:1100px;margin:2rem auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.figure-grid.wide{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.fig-slot{background:var(--card);border:1px dashed rgba(255,204,0,.45);border-radius:var(--radius);overflow:hidden;min-height:220px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.fig-slot:hover{border-color:var(--gold);transform:translateY(-3px)}
+.fig-slot img{display:none;width:100%;height:auto;background:#05070a}
+.fig-slot.has-image{border-style:solid}
+.fig-slot.has-image img{display:block}
+.fig-slot.has-image .fig-placeholder{display:none}
+.fig-placeholder{flex:1;min-height:190px;display:flex;align-items:center;justify-content:center;text-align:center;padding:1.5rem;background:linear-gradient(135deg,rgba(255,204,0,.08),rgba(255,255,255,.025))}
+.fig-name{font-family:monospace;font-size:.86rem;color:var(--gold);word-break:break-word}
+.fig-note{display:block;margin-top:.55rem;font-size:.75rem;color:var(--muted);font-family:var(--fbody);line-height:1.45}
+.fig-cap{padding:.75rem 1rem;border-top:1px solid var(--border);font-size:.8rem;color:var(--muted);line-height:1.45}
 
 /* 2-up grid */
 .img-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem}
@@ -427,6 +439,18 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
       </ol>
     </div>
   </div>
+  <div class="figure-grid wide">
+    <figure class="fig-slot reveal">
+      <img src="figures/pipeline_overview.png" alt="Overall project pipeline figure"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/pipeline_overview.png</span><span class="fig-note">Dataset -> preprocessing -> feature extraction -> classifier -> confusion matrix/results</span></div></div>
+      <figcaption class="fig-cap">Overall pipeline figure showing the full workflow from labeled images to classifier results.</figcaption>
+    </figure>
+    <figure class="fig-slot reveal">
+      <img src="figures/preprocessing_steps.png" alt="Original, resized, grayscale, edge, and DFT magnitude preprocessing example"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/preprocessing_steps.png</span><span class="fig-note">Original image, resized image, grayscale image, edge image, DFT magnitude image</span></div></div>
+      <figcaption class="fig-cap">Example preprocessing figure showing how one image changes before features are extracted.</figcaption>
+    </figure>
+  </div>
 </section>
 
 <!-- DSP TOOLS -->
@@ -454,6 +478,18 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
       <div class="info-k">Outside Tools</div>
       <p>HOG and CNN-style features were considered as stronger learned or shape-aware feature options beyond the core DSP tools.</p>
     </div>
+  </div>
+  <div class="figure-grid wide">
+    <figure class="fig-slot reveal">
+      <img src="figures/feature_comparison_chart.png" alt="Feature comparison chart for raw, edge, DFT, and combined features"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/feature_comparison_chart.png</span><span class="fig-note">Raw vs edge vs DFT vs edge + DFT + color, grouped by classifier if possible</span></div></div>
+      <figcaption class="fig-cap">Feature comparison chart showing how different feature sets affect classifier accuracy.</figcaption>
+    </figure>
+    <figure class="fig-slot reveal">
+      <img src="figures/cnn_comparison.png" alt="CNN accuracy and confusion matrix comparison"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/cnn_comparison.png</span><span class="fig-note">Optional if CNN is included: CNN accuracy alongside classical models and/or CNN confusion matrix</span></div></div>
+      <figcaption class="fig-cap">Optional CNN comparison figure for showing learned-feature performance against the classical models.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -563,6 +599,18 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
       </div>
     </div>
   </div>
+  <div class="figure-grid wide">
+    <figure class="fig-slot reveal">
+      <img src="figures/dataset_good_bad_examples.png" alt="Bad and good dataset examples"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/dataset_good_bad_examples.png</span><span class="fig-note">Include BadCar43, bike4, a good dashcam car, and one pedestrian limitation example</span></div></div>
+      <figcaption class="fig-cap">Bad vs. good dataset examples explaining why dataset cleanup improved the project.</figcaption>
+    </figure>
+    <figure class="fig-slot reveal">
+      <img src="figures/expanded_class_counts.png" alt="Class count bar chart for the expanded real-world run"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/expanded_class_counts.png</span><span class="fig-note">Bar chart: car 414, pedestrian 234, sign 3029</span></div></div>
+      <figcaption class="fig-cap">Class count figure emphasizing the imbalance in the expanded real-world dataset.</figcaption>
+    </figure>
+  </div>
 </section>
 
 <!-- RESULTS (balanced runs) -->
@@ -625,6 +673,23 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
     </div>
   </div>
 </div>
+  <div class="figure-grid wide">
+    <figure class="fig-slot reveal">
+      <img src="figures/balanced_2class_bar.png" alt="Balanced 2-class classifier comparison bar chart"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/balanced_2class_bar.png</span><span class="fig-note">2-class bar chart comparing KNN, Naive Bayes, SVM, and Decision Tree</span></div></div>
+      <figcaption class="fig-cap">Balanced dataset classifier comparison for the 2-class run.</figcaption>
+    </figure>
+    <figure class="fig-slot reveal">
+      <img src="figures/balanced_3class_bar.png" alt="Balanced 3-class classifier comparison bar chart"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/balanced_3class_bar.png</span><span class="fig-note">3-class bar chart comparing KNN, Naive Bayes, SVM, and Decision Tree</span></div></div>
+      <figcaption class="fig-cap">Balanced dataset classifier comparison for the 3-class run.</figcaption>
+    </figure>
+    <figure class="fig-slot reveal">
+      <img src="figures/accuracy_across_runs.png" alt="Accuracy across 2-class, 3-class, and refined real-world runs"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/accuracy_across_runs.png</span><span class="fig-note">Line or grouped bar chart: 2-class vs 3-class vs refined real-world run</span></div></div>
+      <figcaption class="fig-cap">Interpretive accuracy trend showing how results changed across dataset versions.</figcaption>
+    </figure>
+  </div>
 </section>
 
 <!-- NEW EXPANDED RUN -->
@@ -664,6 +729,19 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
     </div>
   </div>
 
+  <div class="figure-grid wide">
+    <figure class="fig-slot reveal">
+      <img src="figures/refined_svm_confusion_matrix.png" alt="SVM confusion matrix for the refined real-world run"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/refined_svm_confusion_matrix.png</span><span class="fig-note">High-priority confusion matrix for the best refined-run classifier</span></div></div>
+      <figcaption class="fig-cap">SVM confusion matrix for the refined real-world car, pedestrian, and sign dataset.</figcaption>
+    </figure>
+    <figure class="fig-slot reveal">
+      <img src="figures/refined_all_confusion_matrices.png" alt="All four refined-run confusion matrices side by side"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/refined_all_confusion_matrices.png</span><span class="fig-note">Optional side-by-side grid: KNN, Naive Bayes, SVM, Decision Tree</span></div></div>
+      <figcaption class="fig-cap">Optional all-model confusion matrix figure for comparing refined-run error patterns.</figcaption>
+    </figure>
+  </div>
+
   <div class="finding reveal" style="background:rgba(255,204,0,.05);border-color:rgba(255,204,0,.2)">
     <div class="finding-icon">🏆</div>
     <div>
@@ -680,6 +758,13 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
       <li>The pixel independence assumption is weak for image data because neighboring pixels and edges are strongly correlated.</li>
       <li>As a result, Naive Bayes could not use spatial image structure as effectively as SVM or tree-based methods.</li>
     </ul>
+  </div>
+  <div class="figure-grid">
+    <figure class="fig-slot reveal">
+      <img src="figures/naive_bayes_failure.png" alt="Naive Bayes failure figure or annotated confusion matrix"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/naive_bayes_failure.png</span><span class="fig-note">Zoomed confusion matrix or annotation explaining sign prior / class imbalance</span></div></div>
+      <figcaption class="fig-cap">Naive Bayes failure figure highlighting how class imbalance and pixel independence hurt performance.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -960,6 +1045,16 @@ function setupZoomable(selector, callback) {
     });
   });
 }
+
+// Figure placeholders automatically turn into images when files are added to /figures.
+document.querySelectorAll('.fig-slot img').forEach(img => {
+  const slot = img.closest('.fig-slot');
+  const showImage = () => slot && slot.classList.add('has-image');
+  const showPlaceholder = () => slot && slot.classList.remove('has-image');
+  img.addEventListener('load', showImage);
+  img.addEventListener('error', showPlaceholder);
+  if (img.complete && img.naturalWidth > 0) showImage();
+});
 
 setupZoomable('img');
 setupZoomable('svg');
