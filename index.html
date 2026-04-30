@@ -25,8 +25,8 @@ strong{color:#fff}
   justify-content:space-between;padding:0 2.5rem;height:64px;transition:background .4s,box-shadow .4s}
 .hdr.scrolled{background:rgba(8,12,18,.93);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--border)}
 .logo a{font-family:var(--ftitle);font-size:1.5rem;color:var(--gold);text-decoration:none;letter-spacing:2px}
-nav ul{list-style:none;display:flex;gap:2rem}
-nav a{font-size:.8rem;font-weight:500;color:var(--text);text-decoration:none;text-transform:uppercase;
+nav ul{list-style:none;display:flex;gap:1.1rem}
+nav a{font-size:.72rem;font-weight:500;color:var(--text);text-decoration:none;text-transform:uppercase;
   letter-spacing:1.5px;opacity:.8;transition:opacity .2s,color .2s}
 nav a:hover{opacity:1;color:var(--gold)}
 .burger{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
@@ -88,6 +88,20 @@ nav a:hover{opacity:1;color:var(--gold)}
 .sb.c{text-align:center;margin-left:auto;margin-right:auto}
 .cblock{max-width:1100px;margin:0 auto 3.5rem;text-align:center}
 
+/* summary / cards */
+.card-grid{max-width:1100px;margin:2rem auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem}
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:border-color .2s,transform .2s}
+.info-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.info-k{font-size:.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem}
+.info-card p,.info-card li{color:var(--muted);font-size:.92rem}
+.info-card ul,.check-list{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.info-card li::before,.check-list li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-right:.55rem;vertical-align:middle}
+.step-list{counter-reset:steps;list-style:none;display:grid;gap:.9rem}
+.step-list li{counter-increment:steps;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;color:var(--muted);font-size:.93rem}
+.step-list li::before{content:counter(steps);display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--cardinal);color:#fff;font-size:.75rem;font-weight:700;margin-right:.75rem}
+.callout-red{max-width:1100px;margin:2.5rem auto 0;background:rgba(153,0,0,.12);border:1px solid rgba(255,80,80,.25);border-radius:var(--radius);padding:2rem 2.5rem}
+.callout-red .finding-title{color:#ff7777}
+
 /* stats */
 .stat-row{display:flex;gap:1.5rem;margin-top:2rem;flex-wrap:wrap}
 .stat-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
@@ -102,6 +116,18 @@ nav a:hover{opacity:1;color:var(--gold)}
 .img-card img{width:100%;display:block}
 .img-caption{padding:.75rem 1rem;font-size:.78rem;color:var(--muted);
   font-style:italic;letter-spacing:.5px;border-top:1px solid var(--border)}
+.figure-grid{max-width:1100px;margin:2rem auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.figure-grid.wide{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.fig-slot{background:var(--card);border:1px dashed rgba(255,204,0,.45);border-radius:var(--radius);overflow:hidden;min-height:220px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.fig-slot:hover{border-color:var(--gold);transform:translateY(-3px)}
+.fig-slot img{display:none;width:100%;height:auto;background:#05070a}
+.fig-slot.has-image{border-style:solid}
+.fig-slot.has-image img{display:block}
+.fig-slot.has-image .fig-placeholder{display:none}
+.fig-placeholder{flex:1;min-height:190px;display:flex;align-items:center;justify-content:center;text-align:center;padding:1.5rem;background:linear-gradient(135deg,rgba(255,204,0,.08),rgba(255,255,255,.025))}
+.fig-name{font-family:monospace;font-size:.86rem;color:var(--gold);word-break:break-word}
+.fig-note{display:block;margin-top:.55rem;font-size:.75rem;color:var(--muted);font-family:var(--fbody);line-height:1.45}
+.fig-cap{padding:.75rem 1rem;border-top:1px solid var(--border);font-size:.8rem;color:var(--muted);line-height:1.45}
 
 /* 2-up grid */
 .img-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem}
@@ -149,12 +175,13 @@ nav a:hover{opacity:1;color:var(--gold)}
 /* team */
 .team-row{display:flex;flex-wrap:wrap;gap:1.25rem;justify-content:center;margin-top:2.5rem}
 .team-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
-  padding:1.75rem 2.25rem;text-align:center;transition:border-color .2s,transform .2s}
+  padding:1.75rem;text-align:center;transition:border-color .2s,transform .2s;flex:1 1 190px;max-width:240px}
 .team-card:hover{border-color:var(--gold);transform:translateY(-3px)}
 .avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--cardinal),var(--gold));
   display:flex;align-items:center;justify-content:center;font-family:var(--ftitle);
   font-size:1.1rem;color:#fff;margin:0 auto .75rem}
 .mname{font-size:.9rem;font-weight:500}
+.mrole{font-size:.8rem;color:var(--muted);line-height:1.55;margin-top:.65rem}
 
 /* refs */
 .narrow{max-width:800px;margin:0 auto}
@@ -196,11 +223,13 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
   <button class="burger" id="burger">&#9776;</button>
   <nav id="nav">
     <ul>
+      <li><a href="#overview">Overview</a></li>
       <li><a href="#intro">Intro</a></li>
+      <li><a href="#methods">Methods</a></li>
+      <li><a href="#tools">DSP Tools</a></li>
       <li><a href="#datasets">Datasets</a></li>
       <li><a href="#results">Results</a></li>
-      <li><a href="#newrun">Improved Run</a></li>
-      <li><a href="#survey">Conclusion</a></li>
+      <li><a href="#code">Code</a></li>
       <li><a href="#team">Team</a></li>
     </ul>
   </nav>
@@ -248,7 +277,7 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
       <!-- city lights -->
       <g opacity=".38">
         <rect x="190" y="372" width="4" height="14" fill="#ff6b35" rx="1"/>
-        <rect x="230" y="360" width="3" height="22" fill="#ff6b35" rx="1"/>
+        <rect x="230" y="360" width="3" height="22" fill="#ff6b35" rx="1"/>s
         <rect x="270" y="376" width="5" height="10" fill="#ffd700" rx="1"/>
         <rect x="1110" y="370" width="4" height="14" fill="#ff6b35" rx="1"/>
         <rect x="1150" y="357" width="3" height="23" fill="#ffd700" rx="1"/>
@@ -256,14 +285,17 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
       </g>
       <!-- ML bounding boxes -->
       <g opacity=".55">
-        <rect x="590" y="335" width="85" height="65" fill="none" stroke="#00ff88" stroke-width="2" stroke-dasharray="4,2"/>
-        <text x="593" y="329" fill="#00ff88" font-size="11" font-family="monospace">vehicle 0.91</text>
-        <rect x="740" y="350" width="55" height="50" fill="none" stroke="#ff4444" stroke-width="2" stroke-dasharray="4,2"/>
-        <text x="742" y="344" fill="#ff4444" font-size="11" font-family="monospace">pedestrian 0.87</text>
-        <rect x="465" y="358" width="44" height="38" fill="none" stroke="#44aaff" stroke-width="2" stroke-dasharray="4,2"/>
-        <text x="467" y="352" fill="#44aaff" font-size="11" font-family="monospace">bicycle 0.79</text>
-        <rect x="850" y="362" width="50" height="42" fill="none" stroke="#FFCC00" stroke-width="2" stroke-dasharray="4,2"/>
-        <text x="852" y="356" fill="#FFCC00" font-size="11" font-family="monospace">sign 0.83</text>
+        <rect x="590" y="75"   width="85" height="65"   fill="none" stroke="#00ff88" stroke-width="2" stroke-dasharray="4,2"/>
+        <text x="593" y="69"   fill="#00ff88" font-size="11" font-family="monospace">vehicle 0.91</text>
+        
+        <rect x="740" y="75"   width="55" height="50"   fill="none" stroke="#ff4444" stroke-width="2" stroke-dasharray="4,2"/>
+        <text x="742" y="69"   fill="#ff4444" font-size="11" font-family="monospace">pedestrian 0.87</text>
+        
+        <rect x="100" y="306"   width="44" height="38"   fill="none" stroke="#44aaff" stroke-width="2" stroke-dasharray="4,2"/>
+        <text x="102" y="300"   fill="#44aaff" font-size="11" font-family="monospace">bicycle 0.79</text>
+        
+        <rect x="700" y="406"   width="50" height="42"   fill="none" stroke="#FFCC00" stroke-width="2" stroke-dasharray="4,2"/>
+        <text x="702" y="400"   fill="#FFCC00" font-size="11" font-family="monospace">sign 0.83</text>
       </g>
       <!-- HUD -->
       <rect x="18" y="57" width="185" height="62" fill="black" opacity=".55" rx="5"/>
@@ -293,6 +325,34 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
   <div class="scroll-hint">
     <span class="stxt">Scroll to explore</span>
     <span class="sarr">&#x25BC;</span>
+  </div>
+</section>
+
+<!-- LANDING OVERVIEW -->
+<section class="sec sec-dark" id="overview">
+  <div class="cblock reveal">
+    <div class="stag c">Project Overview</div>
+    <h2 class="sh c">Roadside Object Classification</h2>
+    <div class="sbar c y"></div>
+    <p class="sb c">A compact summary of the project goal, classifier comparison, main result, and why the result matters for real-world driving image data.</p>
+  </div>
+  <div class="card-grid">
+    <div class="info-card reveal">
+      <div class="info-k">Goal</div>
+      <p>Classify roadside objects from dashcam-style images using MATLAB image preprocessing and baseline machine-learning classifiers.</p>
+    </div>
+    <div class="info-card reveal">
+      <div class="info-k">Compared</div>
+      <p>KNN, Naive Bayes, SVM, and Decision Tree models were trained and tested on labeled road-object image datasets.</p>
+    </div>
+    <div class="info-card reveal">
+      <div class="info-k">Main Result</div>
+      <p>SVM performed best on the refined real-world dataset, reaching about 91.4% accuracy on the car, pedestrian, and sign run.</p>
+    </div>
+    <div class="info-card reveal">
+      <div class="info-k">Why It Matters</div>
+      <p>The results show how dataset quality, class balance, and feature choices can change classifier performance as much as the model itself.</p>
+    </div>
   </div>
 </section>
 
@@ -354,6 +414,102 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
         <rect x="72" y="268" width="276" height="34" rx="8" fill="#1a2332" stroke="#FFCC00" stroke-width="1.5"/>
         <text x="210" y="290" fill="#FFCC00" font-size="10" font-family="monospace" text-anchor="middle">📊 Confusion Matrix Evaluation</text>
       </svg>
+    </div>
+  </div>
+</section>
+
+<!-- METHODS -->
+<section class="sec sec-dark" id="methods">
+  <div class="row">
+    <div class="col-text reveal">
+      <div class="stag">Methods</div>
+      <h2 class="sh">What We Did</h2>
+      <div class="sbar y"></div>
+      <p class="sb">The project followed a full image-classification pipeline, then reran the experiment after improving the dataset quality and realism.</p>
+    </div>
+    <div class="col-visual reveal">
+      <ol class="step-list">
+        <li>Collected and curated labeled image datasets for roadside objects.</li>
+        <li>Removed poor, unrealistic, staged, or badly cropped images.</li>
+        <li>Resized images and converted them to grayscale as signal preparation.</li>
+        <li>Extracted raw-pixel, edge, DFT, color, and optional learned-style features.</li>
+        <li>Trained four MATLAB classifiers: KNN, Naive Bayes, SVM, and Decision Tree.</li>
+        <li>Evaluated each model with confusion matrices and accuracy scores.</li>
+        <li>Reran the classifiers on improved real-world dashcam data.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="figure-grid wide">
+    <figure class="fig-slot reveal">
+      <img src="figures/pipeline_overview.png" alt="Overall project pipeline figure"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/pipeline_overview.png</span><span class="fig-note">Dataset -> preprocessing -> feature extraction -> classifier -> confusion matrix/results</span></div></div>
+      <figcaption class="fig-cap">Overall pipeline figure showing the full workflow from labeled images to classifier results.</figcaption>
+    </figure>
+    <figure class="fig-slot reveal">
+      <img src="sample_outputs/preprocessed_example.png" alt="Example preprocessing output showing image preparation steps"/>
+      <div class="fig-placeholder"><div><span class="fig-name">sample_outputs/preprocessed_example.png</span><span class="fig-note">Example output from the preprocessing pipeline</span></div></div>
+      <figcaption class="fig-cap">Example preprocessing output from the MATLAB pipeline, showing how an image is prepared before feature extraction.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- DSP TOOLS -->
+<section class="sec" id="tools">
+  <div class="cblock reveal">
+    <div class="stag c">DSP Tools Used</div>
+    <h2 class="sh c">Signal Processing in the Pipeline</h2>
+    <div class="sbar c"></div>
+    <p class="sb c">The image data was treated as a 2D signal: first prepared into a consistent form, then transformed into features that classifiers could compare.</p>
+  </div>
+  <div class="card-grid">
+    <div class="info-card reveal">
+      <div class="info-k">2D Convolution / FIR Filtering</div>
+      <p>Sobel-style edge filters were used to emphasize object boundaries and local intensity changes before classification.</p>
+    </div>
+    <div class="info-card reveal">
+      <div class="info-k">Image Preprocessing</div>
+      <p>Grayscale conversion and resizing standardized each image so every sample became a comparable fixed-length signal.</p>
+    </div>
+    <div class="info-card reveal">
+      <div class="info-k">2D DFT / FFT Features</div>
+      <p>Frequency-domain features summarized how image energy was distributed across low, middle, and high spatial frequencies.</p>
+    </div>
+    <div class="info-card reveal">
+      <div class="info-k">Outside Tools</div>
+      <p>HOG and CNN-style features were considered as stronger learned or shape-aware feature options beyond the core DSP tools.</p>
+    </div>
+  </div>
+  <div class="figure-grid wide">
+    <figure class="fig-slot reveal">
+      <img src="figures/feature_comparison_chart.png" alt="Feature comparison chart for raw, edge, DFT, and combined features"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/feature_comparison_chart.png</span><span class="fig-note">Raw vs edge vs DFT vs edge + DFT + color, grouped by classifier if possible</span></div></div>
+      <figcaption class="fig-cap">Feature comparison chart showing how different feature sets affect classifier accuracy.</figcaption>
+    </figure>
+    <figure class="fig-slot reveal">
+      <img src="figures/cnn_comparison.png" alt="CNN accuracy and confusion matrix comparison"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/cnn_comparison.png</span><span class="fig-note">Optional if CNN is included: CNN accuracy alongside classical models and/or CNN confusion matrix</span></div></div>
+      <figcaption class="fig-cap">Optional CNN comparison figure for showing learned-feature performance against the classical models.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- FEATURE EXTRACTION -->
+<section class="sec sec-dark" id="features">
+  <div class="row rev">
+    <div class="col-text reveal">
+      <div class="stag">Feature Extraction</div>
+      <h2 class="sh">From Images to Numbers</h2>
+      <div class="sbar y"></div>
+      <p class="sb">Each classifier needs a numerical feature vector, so the images were transformed into several representations before training.</p>
+    </div>
+    <div class="col-visual reveal">
+      <div class="card-grid" style="margin-top:0">
+        <div class="info-card"><div class="info-k">Raw Pixels</div><p>Flattened grayscale image values provide a simple baseline representation.</p></div>
+        <div class="info-card"><div class="info-k">Edge Features</div><p>Filtered edge magnitude and direction summarize object outlines.</p></div>
+        <div class="info-card"><div class="info-k">DFT Features</div><p>FFT band-energy values describe frequency content in the image.</p></div>
+        <div class="info-card"><div class="info-k">Color Histograms</div><p>RGB histograms capture broad color distribution for traffic signs, cars, and pedestrians.</p></div>
+        <div class="info-card"><div class="info-k">HOG / CNN</div><p>Optional outside features can capture shape patterns or learned visual structure better than raw pixels alone.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -443,6 +599,18 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
       </div>
     </div>
   </div>
+  <div class="figure-grid wide">
+    <figure class="fig-slot reveal">
+      <img src="figures/dataset_good_bad_examples.png" alt="Bad and good dataset examples"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/dataset_good_bad_examples.png</span><span class="fig-note">Include BadCar43, bike4, a good dashcam car, and one pedestrian limitation example</span></div></div>
+      <figcaption class="fig-cap">Bad vs. good dataset examples explaining why dataset cleanup improved the project.</figcaption>
+    </figure>
+    <figure class="fig-slot reveal">
+      <img src="figures/expanded_class_counts.png" alt="Class count bar chart for the expanded real-world run"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/expanded_class_counts.png</span><span class="fig-note">Bar chart: car 414, pedestrian 234, sign 3029</span></div></div>
+      <figcaption class="fig-cap">Class count figure emphasizing the imbalance in the expanded real-world dataset.</figcaption>
+    </figure>
+  </div>
 </section>
 
 <!-- RESULTS (balanced runs) -->
@@ -504,6 +672,24 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
       <div class="img-caption">MATLAB output — 3-class accuracy comparison</div>
     </div>
   </div>
+</div>
+  <div class="figure-grid wide">
+    <figure class="fig-slot reveal">
+      <img src="figures/balanced_2class_bar.png" alt="Balanced 2-class classifier comparison bar chart"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/balanced_2class_bar.png</span><span class="fig-note">2-class bar chart comparing KNN, Naive Bayes, SVM, and Decision Tree</span></div></div>
+      <figcaption class="fig-cap">Balanced dataset classifier comparison for the 2-class run.</figcaption>
+    </figure>
+    <figure class="fig-slot reveal">
+      <img src="figures/balanced_3class_bar.png" alt="Balanced 3-class classifier comparison bar chart"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/balanced_3class_bar.png</span><span class="fig-note">3-class bar chart comparing KNN, Naive Bayes, SVM, and Decision Tree</span></div></div>
+      <figcaption class="fig-cap">Balanced dataset classifier comparison for the 3-class run.</figcaption>
+    </figure>
+    <figure class="fig-slot reveal">
+      <img src="figures/accuracy_across_runs.png" alt="Accuracy across 2-class, 3-class, and refined real-world runs"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/accuracy_across_runs.png</span><span class="fig-note">Line or grouped bar chart: 2-class vs 3-class vs refined real-world run</span></div></div>
+      <figcaption class="fig-cap">Interpretive accuracy trend showing how results changed across dataset versions.</figcaption>
+    </figure>
+  </div>
 </section>
 
 <!-- NEW EXPANDED RUN -->
@@ -543,6 +729,19 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
     </div>
   </div>
 
+  <div class="figure-grid wide">
+    <figure class="fig-slot reveal">
+      <img src="figures/refined_svm_confusion_matrix.png" alt="SVM confusion matrix for the refined real-world run"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/refined_svm_confusion_matrix.png</span><span class="fig-note">High-priority confusion matrix for the best refined-run classifier</span></div></div>
+      <figcaption class="fig-cap">SVM confusion matrix for the refined real-world car, pedestrian, and sign dataset.</figcaption>
+    </figure>
+    <figure class="fig-slot reveal">
+      <img src="figures/refined_all_confusion_matrices.png" alt="All four refined-run confusion matrices side by side"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/refined_all_confusion_matrices.png</span><span class="fig-note">Optional side-by-side grid: KNN, Naive Bayes, SVM, Decision Tree</span></div></div>
+      <figcaption class="fig-cap">Optional all-model confusion matrix figure for comparing refined-run error patterns.</figcaption>
+    </figure>
+  </div>
+
   <div class="finding reveal" style="background:rgba(255,204,0,.05);border-color:rgba(255,204,0,.2)">
     <div class="finding-icon">🏆</div>
     <div>
@@ -550,6 +749,22 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
       <p>SVM is the clear winner at <strong>91.43%</strong>, consistent with literature suggesting SVM handles high-dimensional pixel features well. 
         The jump from 55% → 91% from balanced-50 to the real dataset underscores how data volume dramatically impacts baseline classifiers. Naive Bayes remains the weakest, sensitive to class imbalance.</p>
     </div>
+  </div>
+
+  <div class="callout-red reveal">
+    <div class="finding-title">Why Naive Bayes Struggled</div>
+    <ul class="check-list">
+      <li>Class imbalance increased the prior probability of the dominant sign class, pulling predictions toward that label.</li>
+      <li>The pixel independence assumption is weak for image data because neighboring pixels and edges are strongly correlated.</li>
+      <li>As a result, Naive Bayes could not use spatial image structure as effectively as SVM or tree-based methods.</li>
+    </ul>
+  </div>
+  <div class="figure-grid">
+    <figure class="fig-slot reveal">
+      <img src="figures/naive_bayes_failure.png" alt="Naive Bayes failure figure or annotated confusion matrix"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/naive_bayes_failure.png</span><span class="fig-note">Zoomed confusion matrix or annotation explaining sign prior / class imbalance</span></div></div>
+      <figcaption class="fig-cap">Naive Bayes failure figure highlighting how class imbalance and pixel independence hurt performance.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -627,6 +842,67 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
   </div>
 </section>
 
+<!-- STRENGTHS / WEAKNESSES / IMPROVEMENTS -->
+<section class="sec sec-dark" id="reflection">
+  <div class="cblock reveal">
+    <div class="stag c">Reflection</div>
+    <h2 class="sh c">Strengths, Weaknesses,<br>Improvements</h2>
+    <div class="sbar c y"></div>
+  </div>
+  <div class="card-grid">
+    <div class="info-card reveal">
+      <div class="info-k">Strengths</div>
+      <ul>
+        <li>Clear baseline comparison across four classifiers.</li>
+        <li>Improved results after using a better real-world dataset.</li>
+        <li>Strong interpretation of SVM performance versus Naive Bayes.</li>
+      </ul>
+    </div>
+    <div class="info-card reveal">
+      <div class="info-k">Weaknesses</div>
+      <ul>
+        <li>Class imbalance, especially the large number of sign images.</li>
+        <li>Early datasets included poor-quality or unrealistic images.</li>
+        <li>The project performs classification, not full object detection.</li>
+      </ul>
+    </div>
+    <div class="info-card reveal">
+      <div class="info-k">Improvements</div>
+      <ul>
+        <li>Collect more balanced data across all classes.</li>
+        <li>Add more object classes and driving conditions.</li>
+        <li>Use CNNs or stronger learned features.</li>
+        <li>Extend to full-frame detection or video later.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CODE / REPRODUCIBILITY -->
+<section class="sec" id="code">
+  <div class="row">
+    <div class="col-text reveal">
+      <div class="stag">Code / Reproducibility</div>
+      <h2 class="sh">Run the Demo</h2>
+      <div class="sbar"></div>
+      <p class="sb">The main script is <strong>run_demo.m</strong>. It loads the included sample dataset, preprocesses each image, extracts selected features, trains the four classifiers, and displays confusion matrices plus an accuracy comparison chart.</p>
+      <p class="sb">A small sample dataset is included in <strong>dataset_sample/</strong> so the demo can run from the project zip. The full development dataset and MATLAB project files are hosted separately in the Google Drive file <strong>Road_Object_Classification.zip</strong>.</p>
+    </div>
+    <div class="col-visual reveal">
+      <div class="future-box">
+        <div class="future-title">Project Files</div>
+        <ul class="future-list">
+          <li>Main script: <strong>run_demo.m</strong></li>
+          <li>Sample data: <strong>dataset_sample/</strong></li>
+          <li>Feature experiment script: <strong>feature_classifier_experiments.m</strong></li>
+          <li>MATLAB files and full dataset: <a href="https://drive.google.com/drive/folders/1X8OymxTTjpyPlPXYaQ2Venccy6lYp6zm?usp=sharing" target="_blank">Road_Object_Classification.zip on Google Drive</a></li>
+        </ul>
+      </div>
+      <p class="sb" style="margin-top:1.25rem">The website summarizes the project story and results, while the MATLAB files provide the reproducible classifier pipeline used for the sample run.</p>
+    </div>
+  </div>
+</section>
+
 <!-- TEAM -->
 <section class="sec sec-dark" id="team">
   <div class="cblock">
@@ -636,11 +912,31 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
     <p class="sb c">Submitted March 22, 2026 · Umich</p>
   </div>
   <div class="team-row">
-    <div class="team-card"><div class="avatar">LO</div><div class="mname">Lucas Orlebeke</div></div>
-    <div class="team-card"><div class="avatar">JP</div><div class="mname">Joshua Peterson</div></div>
-    <div class="team-card"><div class="avatar">PF</div><div class="mname">Pok Wai Fong</div></div>
-    <div class="team-card"><div class="avatar">HT</div><div class="mname">Hoa Tran</div></div>
-    <div class="team-card"><div class="avatar">BY</div><div class="mname">Boyu Jin</div></div>
+    <div class="team-card">
+      <div class="avatar">LO</div>
+      <div class="mname">Lucas Orlebeke</div>
+      <p class="mrole">Helped source and clean datasets, compare classifier results, and interpret the improved real-world run.</p>
+    </div>
+    <div class="team-card">
+      <div class="avatar">JP</div>
+      <div class="mname">Joshua Peterson</div>
+      <p class="mrole">Worked on MATLAB classifier coding, confusion-matrix evaluation, and result analysis across model runs.</p>
+    </div>
+    <div class="team-card">
+      <div class="avatar">PF</div>
+      <div class="mname">Pok Wai Fong</div>
+      <p class="mrole">Contributed to dataset review, report writing, and the paper summary connecting the work to autonomous-driving literature.</p>
+    </div>
+    <div class="team-card">
+      <div class="avatar">HT</div>
+      <div class="mname">Hoa Tran</div>
+      <p class="mrole">Built and refined the website design, organized the visual results, and connected the code outputs to the web report.</p>
+    </div>
+    <div class="team-card">
+      <div class="avatar">BY</div>
+      <div class="mname">Boyu Jin</div>
+      <p class="mrole">Supported feature-extraction experiments, dataset preparation, and analysis of strengths, weaknesses, and future improvements.</p>
+    </div>
   </div>
 </section>
 
@@ -748,6 +1044,16 @@ function setupZoomable(selector, callback) {
     });
   });
 }
+
+// Figure placeholders automatically turn into images when files are added to /figures.
+document.querySelectorAll('.fig-slot img').forEach(img => {
+  const slot = img.closest('.fig-slot');
+  const showImage = () => slot && slot.classList.add('has-image');
+  const showPlaceholder = () => slot && slot.classList.remove('has-image');
+  img.addEventListener('load', showImage);
+  img.addEventListener('error', showPlaceholder);
+  if (img.complete && img.naturalWidth > 0) showImage();
+});
 
 setupZoomable('img');
 setupZoomable('svg');
