@@ -432,7 +432,7 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
         <li>Collected and curated labeled image datasets for roadside objects.</li>
         <li>Removed poor, unrealistic, staged, or badly cropped images.</li>
         <li>Resized images and converted them to grayscale as signal preparation.</li>
-        <li>Extracted raw-pixel, edge, DFT, color, and optional learned-style features.</li>
+        <li>Extracted raw-pixel, edge, DFT, color, and learned-style features.</li>
         <li>Trained four MATLAB classifiers: KNN, Naive Bayes, SVM, and Decision Tree.</li>
         <li>Evaluated each model with confusion matrices and accuracy scores.</li>
         <li>Reran the classifiers on improved real-world dashcam data.</li>
@@ -487,8 +487,8 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
     </figure>
     <figure class="fig-slot reveal">
       <img src="images/cnn_comparison.png" alt="CNN accuracy and confusion matrix comparison"/>
-      <div class="fig-placeholder"><div><span class="fig-name">images/cnn_comparison.png</span><span class="fig-note">Optional if CNN is included: CNN accuracy alongside classical models and/or CNN confusion matrix</span></div></div>
-      <figcaption class="fig-cap">Optional CNN comparison figure for showing learned-feature performance against the classical models.</figcaption>
+      <div class="fig-placeholder"><div><span class="fig-name">images/cnn_comparison.png</span><span class="fig-note"> if CNN is included: CNN accuracy alongside classical models and/or CNN confusion matrix</span></div></div>
+      <figcaption class="fig-cap"> CNN comparison figure for showing learned-feature performance against the classical models.</figcaption>
     </figure>
   </div>
 </section>
@@ -508,7 +508,7 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
         <div class="info-card"><div class="info-k">Edge Features</div><p>Filtered edge magnitude and direction summarize object outlines.</p></div>
         <div class="info-card"><div class="info-k">DFT Features</div><p>FFT band-energy values describe frequency content in the image.</p></div>
         <div class="info-card"><div class="info-k">Color Histograms</div><p>RGB histograms capture broad color distribution for traffic signs, cars, and pedestrians.</p></div>
-        <div class="info-card"><div class="info-k">HOG / CNN</div><p>Optional outside features can capture shape patterns or learned visual structure better than raw pixels alone.</p></div>
+        <div class="info-card"><div class="info-k">HOG / CNN</div><p> outside features can capture shape patterns or learned visual structure better than raw pixels alone.</p></div>
       </div>
     </div>
   </div>
@@ -737,8 +737,8 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
     </figure>
     <figure class="fig-slot reveal">
       <img src="images/refined_all_confusion_matrices.png" alt="All four refined-run confusion matrices side by side"/>
-      <div class="fig-placeholder"><div><span class="fig-name">images/refined_all_confusion_matrices.png</span><span class="fig-note">Optional side-by-side grid: KNN, Naive Bayes, SVM, Decision Tree</span></div></div>
-      <figcaption class="fig-cap">Optional all-model confusion matrix figure for comparing refined-run error patterns.</figcaption>
+      <div class="fig-placeholder"><div><span class="fig-name">images/refined_all_confusion_matrices.png</span><span class="fig-note"> side-by-side grid: KNN, Naive Bayes, SVM, Decision Tree</span></div></div>
+      <figcaption class="fig-cap"> all-model confusion matrix figure for comparing refined-run error patterns.</figcaption>
     </figure>
   </div>
 
