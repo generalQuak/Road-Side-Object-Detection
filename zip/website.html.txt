@@ -441,13 +441,13 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
   </div>
   <div class="figure-grid wide">
     <figure class="fig-slot reveal">
-      <img src="images/pipeline_overview.png" alt="Overall project pipeline figure"/>
-      <div class="fig-placeholder"><div><span class="fig-name">images/pipeline_overview.png</span><span class="fig-note">Dataset -> preprocessing -> feature extraction -> classifier -> confusion matrix/results</span></div></div>
+      <img src="figures/pipeline_overview.png" alt="Overall project pipeline figure"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/pipeline_overview.png</span><span class="fig-note">Dataset -> preprocessing -> feature extraction -> classifier -> confusion matrix/results</span></div></div>
       <figcaption class="fig-cap">Overall pipeline figure showing the full workflow from labeled images to classifier results.</figcaption>
     </figure>
     <figure class="fig-slot reveal">
-      <img src="images/preprocessed_example.png" alt="Example preprocessing output showing image preparation steps"/>
-      <div class="fig-placeholder"><div><span class="fig-name">images/preprocessed_example.png</span><span class="fig-note">Example output from the preprocessing pipeline</span></div></div>
+      <img src="sample_outputs/preprocessed_example.png" alt="Example preprocessing output showing image preparation steps"/>
+      <div class="fig-placeholder"><div><span class="fig-name">sample_outputs/preprocessed_example.png</span><span class="fig-note">Example output from the preprocessing pipeline</span></div></div>
       <figcaption class="fig-cap">Example preprocessing output from the MATLAB pipeline, showing how an image is prepared before feature extraction.</figcaption>
     </figure>
   </div>
@@ -481,13 +481,13 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
   </div>
   <div class="figure-grid wide">
     <figure class="fig-slot reveal">
-      <img src="images/feature_comparison_chart.png" alt="Feature comparison chart for raw, edge, DFT, and combined features"/>
-      <div class="fig-placeholder"><div><span class="fig-name">images/feature_comparison_chart.png</span><span class="fig-note">Raw vs edge vs DFT vs edge + DFT + color, grouped by classifier</span></div></div>
+      <img src="figures/feature_comparison_chart.png" alt="Feature comparison chart for raw, edge, DFT, and combined features"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/feature_comparison_chart.png</span><span class="fig-note">Raw vs edge vs DFT vs edge + DFT + color, grouped by classifier if possible</span></div></div>
       <figcaption class="fig-cap">Feature comparison chart showing how different feature sets affect classifier accuracy.</figcaption>
     </figure>
     <figure class="fig-slot reveal">
-      <img src="images/cnn_comparison.png" alt="CNN accuracy and confusion matrix comparison"/>
-      <div class="fig-placeholder"><div><span class="fig-name">images/cnn_comparison.png</span><span class="fig-note">Optional if CNN is included: CNN accuracy alongside classical models and/or CNN confusion matrix</span></div></div>
+      <img src="figures/cnn_comparison.png" alt="CNN accuracy and confusion matrix comparison"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/cnn_comparison.png</span><span class="fig-note">Optional if CNN is included: CNN accuracy alongside classical models and/or CNN confusion matrix</span></div></div>
       <figcaption class="fig-cap">Optional CNN comparison figure for showing learned-feature performance against the classical models.</figcaption>
     </figure>
   </div>
@@ -601,13 +601,13 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
   </div>
   <div class="figure-grid wide">
     <figure class="fig-slot reveal">
-      <img src="images/dataset_good_bad_examples.png" alt="Bad and good dataset examples"/>
-      <div class="fig-placeholder"><div><span class="fig-name">images/dataset_good_bad_examples.png</span><span class="fig-note">Include BadCar43, bike4, a good dashcam car, and one pedestrian limitation example</span></div></div>
+      <img src="figures/dataset_good_bad_examples.png" alt="Bad and good dataset examples"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/dataset_good_bad_examples.png</span><span class="fig-note">Include BadCar43, bike4, a good dashcam car, and one pedestrian limitation example</span></div></div>
       <figcaption class="fig-cap">Bad vs. good dataset examples explaining why dataset cleanup improved the project.</figcaption>
     </figure>
     <figure class="fig-slot reveal">
-      <img src="images/expanded_class_counts.png" alt="Class count bar chart for the expanded real-world run"/>
-      <div class="fig-placeholder"><div><span class="fig-name">images/expanded_class_counts.png</span><span class="fig-note">Bar chart: car 414, pedestrian 234, sign 3029</span></div></div>
+      <img src="figures/expanded_class_counts.png" alt="Class count bar chart for the expanded real-world run"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/expanded_class_counts.png</span><span class="fig-note">Bar chart: car 414, pedestrian 234, sign 3029</span></div></div>
       <figcaption class="fig-cap">Class count figure emphasizing the imbalance in the expanded real-world dataset.</figcaption>
     </figure>
   </div>
@@ -675,18 +675,18 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
 </div>
   <div class="figure-grid wide">
     <figure class="fig-slot reveal">
-      <img src="images/balanced_2class_bar.png" alt="Balanced 2-class classifier comparison bar chart"/>
-      <div class="fig-placeholder"><div><span class="fig-name">images/balanced_2class_bar.png</span><span class="fig-note">2-class bar chart comparing KNN, Naive Bayes, SVM, and Decision Tree</span></div></div>
+      <img src="figures/balanced_2class_bar.png" alt="Balanced 2-class classifier comparison bar chart"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/balanced_2class_bar.png</span><span class="fig-note">2-class bar chart comparing KNN, Naive Bayes, SVM, and Decision Tree</span></div></div>
       <figcaption class="fig-cap">Balanced dataset classifier comparison for the 2-class run.</figcaption>
     </figure>
     <figure class="fig-slot reveal">
-      <img src="images/balanced_3class_bar.png" alt="Balanced 3-class classifier comparison bar chart"/>
-      <div class="fig-placeholder"><div><span class="fig-name">images/balanced_3class_bar.png</span><span class="fig-note">3-class bar chart comparing KNN, Naive Bayes, SVM, and Decision Tree</span></div></div>
+      <img src="figures/balanced_3class_bar.png" alt="Balanced 3-class classifier comparison bar chart"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/balanced_3class_bar.png</span><span class="fig-note">3-class bar chart comparing KNN, Naive Bayes, SVM, and Decision Tree</span></div></div>
       <figcaption class="fig-cap">Balanced dataset classifier comparison for the 3-class run.</figcaption>
     </figure>
     <figure class="fig-slot reveal">
-      <img src="images/accuracy_across_runs.png" alt="Accuracy across 2-class, 3-class, and refined real-world runs"/>
-      <div class="fig-placeholder"><div><span class="fig-name">images/accuracy_across_runs.png</span><span class="fig-note">Line or grouped bar chart: 2-class vs 3-class vs refined real-world run</span></div></div>
+      <img src="figures/accuracy_across_runs.png" alt="Accuracy across 2-class, 3-class, and refined real-world runs"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/accuracy_across_runs.png</span><span class="fig-note">Line or grouped bar chart: 2-class vs 3-class vs refined real-world run</span></div></div>
       <figcaption class="fig-cap">Interpretive accuracy trend showing how results changed across dataset versions.</figcaption>
     </figure>
   </div>
@@ -731,13 +731,13 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
 
   <div class="figure-grid wide">
     <figure class="fig-slot reveal">
-      <img src="images/refined_svm_confusion_matrix.png" alt="SVM confusion matrix for the refined real-world run"/>
-      <div class="fig-placeholder"><div><span class="fig-name">images/refined_svm_confusion_matrix.png</span><span class="fig-note">High-priority confusion matrix for the best refined-run classifier</span></div></div>
+      <img src="figures/refined_svm_confusion_matrix.png" alt="SVM confusion matrix for the refined real-world run"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/refined_svm_confusion_matrix.png</span><span class="fig-note">High-priority confusion matrix for the best refined-run classifier</span></div></div>
       <figcaption class="fig-cap">SVM confusion matrix for the refined real-world car, pedestrian, and sign dataset.</figcaption>
     </figure>
     <figure class="fig-slot reveal">
-      <img src="images/refined_all_confusion_matrices.png" alt="All four refined-run confusion matrices side by side"/>
-      <div class="fig-placeholder"><div><span class="fig-name">images/refined_all_confusion_matrices.png</span><span class="fig-note">Optional side-by-side grid: KNN, Naive Bayes, SVM, Decision Tree</span></div></div>
+      <img src="figures/refined_all_confusion_matrices.png" alt="All four refined-run confusion matrices side by side"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/refined_all_confusion_matrices.png</span><span class="fig-note">Optional side-by-side grid: KNN, Naive Bayes, SVM, Decision Tree</span></div></div>
       <figcaption class="fig-cap">Optional all-model confusion matrix figure for comparing refined-run error patterns.</figcaption>
     </figure>
   </div>
@@ -761,8 +761,8 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
   </div>
   <div class="figure-grid">
     <figure class="fig-slot reveal">
-      <img src="images/naive_bayes_failure.png" alt="Naive Bayes failure figure or annotated confusion matrix"/>
-      <div class="fig-placeholder"><div><span class="fig-name">images/naive_bayes_failure.png</span><span class="fig-note">Zoomed confusion matrix or annotation explaining sign prior / class imbalance</span></div></div>
+      <img src="figures/naive_bayes_failure.png" alt="Naive Bayes failure figure or annotated confusion matrix"/>
+      <div class="fig-placeholder"><div><span class="fig-name">figures/naive_bayes_failure.png</span><span class="fig-note">Zoomed confusion matrix or annotation explaining sign prior / class imbalance</span></div></div>
       <figcaption class="fig-cap">Naive Bayes failure figure highlighting how class imbalance and pixel independence hurt performance.</figcaption>
     </figure>
   </div>
@@ -1045,7 +1045,7 @@ function setupZoomable(selector, callback) {
   });
 }
 
-// Figure placeholders automatically turn into images when files are added to /images.
+// Figure placeholders automatically turn into images when files are added to /figures.
 document.querySelectorAll('.fig-slot img').forEach(img => {
   const slot = img.closest('.fig-slot');
   const showImage = () => slot && slot.classList.add('has-image');
