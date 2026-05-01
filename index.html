@@ -388,14 +388,15 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:2rem 2
       <div class="stag">Methods</div>
       <h2 class="sh">What We Did</h2>
       <div class="sbar y"></div>
-      <p class="sb">The project followed a complete image-classification pipeline and was later repeated after improving dataset 
-        quality and realism. We first collected labeled road-object images, then resized and preprocessed them by converting them 
-        to a common resolution and grayscale format. From these images, we extracted several feature representations, including raw 
-        pixel values, edge-based features, frequency-domain features from the DFT, and color information. These features were then 
-        used to train and test four baseline MATLAB classifiers: KNN, Naive Bayes, SVM, and Decision Tree. We evaluated each model 
-        using accuracy, confusion matrices, and cross-comparison across different class counts. After identifying weaknesses in the 
-        initial dataset, such as unrealistic, staged, or poorly cropped images, we refined the dataset with more representative 
-        dashcam-style examples and reran the full pipeline to study how improved data quality affected classifier performance.</p>
+      <p class="sb">Our project followed a full road-object image classification pipeline, which we later repeated after improving the 
+        realism and quality of the dataset. We began by gathering labeled object images and organizing them by class. Each image was 
+        resized to a common resolution and preprocessed through steps such as grayscale conversion, normalization, and data cleaning to 
+        make the inputs more consistent. We then compared multiple feature representations, including raw pixel values, edge-based features, 
+        frequency-domain features derived from the discrete Fourier transform, and color-based features. Using these representations, we 
+        trained and evaluated four MATLAB classifiers: KNN, Naive Bayes, SVM, and Decision Tree. Model performance was measured using 
+        confusion matrices, accuracy comparisons, and analysis across both balanced and refined real-world datasets. After finding that the 
+        original dataset contained unrealistic and suboptimal images, we replaced many of those examples with more representative 
+        dashcam-style objects and reran the classification pipeline to observe how dataset realism changed the results.</p>
     </div>
     <div class="col-visual reveal">
       <ol class="step-list">
